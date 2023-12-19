@@ -26,8 +26,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-//                    Greeting("Android")
-                    BpkCard()
+                    DeparturesCard()
                 }
             }
         }
@@ -35,35 +34,25 @@ class MainActivity : ComponentActivity() {
 }
 
 
-//fun Greeting(name: String, modifier: Modifier = Modifier) {
-//    text(z)
-//}
-
 @Composable
-fun BpkCard(){
+fun DeparturesCard(){
     BpkTheme {
          Column {
             BpkCard {
                 BpkText(
                     text = "Departures",
                     style = BpkTheme.typography.heading1)
+                BpkText(text = "JFK")
+                BpkText(text = "Sat, 22 Jul")
             }
         }
     }
 }
 
-
-
-
-
-
-
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     SkyJourneyTheme {
-//        Greeting("Android")
         BpkText("Hello")
     }
-
 }

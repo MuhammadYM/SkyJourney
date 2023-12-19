@@ -3,15 +3,15 @@ package com.example.skyjourney
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.ui.viewinterop.AndroidView
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.skyjourney.ui.theme.SkyJourneyTheme
+import net.skyscanner.backpack.compose.theme.BpkTheme
 import net.skyscanner.backpack.compose.card.BpkCard
 import net.skyscanner.backpack.compose.text.BpkText
 
@@ -26,23 +26,29 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
-                    BpkCard(text = "Hello")
+//                    Greeting("Android")
+                    BpkCard()
                 }
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
 
-}
+//fun Greeting(name: String, modifier: Modifier = Modifier) {
+//    text(z)
+//}
 
 @Composable
-fun BpkCard(text: String){
-    BpkCard {
-        BpkText(text = text)
+fun BpkCard(){
+    BpkTheme {
+         Column {
+            BpkCard {
+                BpkText(
+                    text = "Departures",
+                    style = BpkTheme.typography.heading1)
+            }
+        }
     }
 }
 
@@ -56,9 +62,8 @@ fun BpkCard(text: String){
 @Composable
 fun GreetingPreview() {
     SkyJourneyTheme {
-        Greeting("Android")
-    }
-    BpkCard(){
+//        Greeting("Android")
         BpkText("Hello")
     }
+
 }

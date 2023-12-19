@@ -26,7 +26,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    DeparturesCard()
+                    FlightDetailsCard()
                 }
             }
         }
@@ -35,7 +35,7 @@ class MainActivity : ComponentActivity() {
 
 
 @Composable
-fun DeparturesCard(){
+fun FlightDetailsCard(){
     BpkTheme {
          Column {
             BpkCard {
